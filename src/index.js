@@ -1,6 +1,6 @@
 // Your code here
 
-const baseUrl = `http://localhost:3000/films`
+const baseUrl = `https://my-json-server.typicode.com/Mworia-Ian/wk3-code-challenge/films`
 
 fetch(baseUrl, {
     method: 'GET',
@@ -77,8 +77,8 @@ fetch(baseUrl, {
             btn.innerText = 'SOLD OUT!!'
             btn.disable = true
        }
-
     }
+
     
     const buyTicket = async () => {
         const response = await fetch(`${baseUrl}/${currentFilmId}`, {
@@ -104,9 +104,9 @@ fetch(baseUrl, {
         const buyticket = document.getElementById('buy-ticket')
         // buyticket.addEventListener("click", buyTicket);
 
-        buyticket.addEventListener("click",  (e) => {
+        buyticket.addEventListener("click", async (e) => {
             e.preventDefault();
-            buyTicket()
+            await buyTicket()
            } )
         
     
